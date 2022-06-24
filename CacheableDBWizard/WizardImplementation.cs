@@ -81,19 +81,28 @@ namespace CacheableDBWizard
 
     public partial class UserInputForm : Form
     {
+        // A string (to accept the user-input value), label,
+        // and textbox for each custom parameter
         private static string modelNamespace;
         private static string keyType;
         private static string valueType;
         private static string sqlString;
+
         private static Label modelNamespaceLabel;
         private static Label keyTypeLabel;
         private static Label valueTypeLabel;
         private static Label sqlStringLabel;
+
         private TextBox modelNamespaceBox;
         private TextBox keyTypeBox;
         private TextBox valueTypeBox;
         private TextBox sqlStringBox;
+
         private Button submitButton;
+        
+        // User has the option of selecting a Model file from
+        // which the wizard will attempt to populate the custom 
+        // parameter values (except sqlString)
         private Button selectFileButton;
         private OpenFileDialog fileDialog;
 
@@ -218,13 +227,17 @@ namespace CacheableDBWizard
         private void selectFileButton_Click(object sender, EventArgs e)
         {
             fileDialog = new OpenFileDialog();
-            fileDialog.InitialDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\Models";
+
+            // Attempt to auto-navigate to the Models directory
+            fileDialog.InitialDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\Models"; 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                var filePath = fileDialog.FileName;
-
                 var fileStream = fileDialog.OpenFile();
 
+                // Scan filestream line-by-line for namespace
+                // and relevant data types; use these values to
+                // populate Form textboxes. This gives the user
+                // the chance to edit them afterwards if necessary.
                 StreamReader reader = new StreamReader(fileStream);
                 string line;
                 while ((line = reader.ReadLine()) != null)

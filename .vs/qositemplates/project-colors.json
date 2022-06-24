@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a0c852f7-9955-4bd3-91da-51b6f8a0edd6": {
+      "ProjectGuid": "a0c852f7-9955-4bd3-91da-51b6f8a0edd6",
+      "DisplayName": "CacheableDBWizard",
+      "ColorIndex": 0
+    },
+    "e9c46ad3-d856-4627-ae0a-5eb7f744afbc": {
+      "ProjectGuid": "e9c46ad3-d856-4627-ae0a-5eb7f744afbc",
+      "DisplayName": "CacheableDBTemplate",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

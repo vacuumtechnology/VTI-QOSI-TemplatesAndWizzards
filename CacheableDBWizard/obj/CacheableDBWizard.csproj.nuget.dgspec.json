@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj",
+        "projectName": "CacheableDBTemplate",
+        "projectPath": "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj",
+        "projectName": "CacheableDBWizard",
+        "projectPath": "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj",
+        "packagesPath": "C:\\Users\\tanderson\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\qositemplates\\CacheableDBWizard\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tanderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj": {
+                "projectPath": "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "Microsoft.VSSDK.BuildTools": {
+              "target": "Package",
+              "version": "[17.0.5234, )"
+            },
+            "Microsoft.VisualStudio.SDK": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[17.0.31902.203, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

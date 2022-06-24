@@ -1,0 +1,15 @@
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\_EmptyResource.resources
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.csproj.GenerateResource.cache
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.csproj.CoreCompileInputs.cache
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.dll
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.pdb
+C:\Projects\webapplicationqosi\CacheableDBTemplate\bin\Debug\ItemTemplates\CSharp\1033\CacheableDBTemplate.zip
+C:\Projects\webapplicationqosi\CacheableDBTemplate\obj\Debug\CSharp\1033\CacheableDBTemplate.zip
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\bin\Debug\ItemTemplates\CSharp\1033\CacheableDBTemplate.zip
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.csproj.AssemblyReference.cache
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\_EmptyResource.resources
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.csproj.GenerateResource.cache
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.csproj.CoreCompileInputs.cache
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CSharp\1033\CacheableDBTemplate.zip
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.dll
+C:\Projects\cacheabledbtemplate\CacheableDBTemplate\obj\Debug\CacheableDBTemplate.pdb

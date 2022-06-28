@@ -1,4 +1,5 @@
 ﻿// Wizard implementation tutorial: https://docs.microsoft.com/en-us/visualstudio/extensibility/how-to-use-wizards-with-project-templates?view=vs-2022
+// template schema reference: https://docs.microsoft.com/en-us/visualstudio/extensibility/visual-studio-template-schema-reference?view=vs-2022
 
 using System;
 using System.IO;
@@ -7,9 +8,9 @@ using Microsoft.VisualStudio.TemplateWizard;
 using System.Windows.Forms;
 using EnvDTE;
 
-namespace CacheableDBWizard
+namespace WizardOfVti
 {
-    public class WizardImplementation : IWizard
+    public class CacheableDB : IWizard
     {
         private UserInputForm userInputForm;
         private string modelNamespaceString;

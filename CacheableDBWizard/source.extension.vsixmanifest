@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="CacheableDBWizard.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.0" Language="en-US" Publisher="Company" />
-        <DisplayName>CacheableDBWizard</DisplayName>
+        <Identity Id="WizardOfVti.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.0" Language="en-US" Publisher="Company" />
+        <DisplayName>WizardOfVti</DisplayName>
         <Description>Empty VSIX Project.</Description>
     </Metadata>
     <Installation>
@@ -18,7 +18,7 @@
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="CacheableDBTemplate" d:TargetPath="|CacheableDBTemplate;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="CacheableDB" d:TargetPath="|CacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" AssemblyName="|%CurrentProject%;AssemblyName|" />
     </Assets>
 </PackageManifest>

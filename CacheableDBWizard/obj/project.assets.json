@@ -1627,13 +1627,13 @@
           "lib/net472/_._": {}
         }
       },
-      "CacheableDBTemplate/1.0.0": {
+      "CacheableDB/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         }
       }
     },
@@ -3251,13 +3251,13 @@
           "lib/net472/_._": {}
         }
       },
-      "CacheableDBTemplate/1.0.0": {
+      "CacheableDB/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         }
       }
     },
@@ -4875,13 +4875,13 @@
           "lib/net472/_._": {}
         }
       },
-      "CacheableDBTemplate/1.0.0": {
+      "CacheableDB/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         }
       }
     },
@@ -6499,13 +6499,13 @@
           "lib/net472/_._": {}
         }
       },
-      "CacheableDBTemplate/1.0.0": {
+      "CacheableDB/1.0.0": {
         "type": "project",
         "compile": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CacheableDBTemplate.dll": {}
+          "bin/placeholder/CacheableDB.dll": {}
         }
       }
     }
@@ -9955,40 +9955,40 @@
         "vslangproj90.nuspec"
       ]
     },
-    "CacheableDBTemplate/1.0.0": {
+    "CacheableDB/1.0.0": {
       "type": "project",
-      "path": "../CacheableDBTemplate/CacheableDBTemplate.csproj",
-      "msbuildProject": "../CacheableDBTemplate/CacheableDBTemplate.csproj"
+      "path": "../CacheableDBTemplate/CacheableDB.csproj",
+      "msbuildProject": "../CacheableDBTemplate/CacheableDB.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "CacheableDBTemplate >= 1.0.0",
+      "CacheableDB >= 1.0.0",
       "Microsoft.VSSDK.BuildTools >= 17.0.5234",
       "Microsoft.VisualStudio.SDK >= 17.0.31902.203"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tanderson\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pwrinkle\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj",
-      "projectName": "CacheableDBWizard",
-      "projectPath": "C:\\Projects\\qositemplates\\CacheableDBWizard\\CacheableDBWizard.csproj",
-      "packagesPath": "C:\\Users\\tanderson\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\qositemplates\\CacheableDBWizard\\obj\\",
+      "projectUniqueName": "C:\\var\\vti\\qosi\\webapplicationqosi\\Common\\templatesandwizzards\\CacheableDBWizard\\WizardOfVTI.csproj",
+      "projectName": "WizardOfVti",
+      "projectPath": "C:\\var\\vti\\qosi\\webapplicationqosi\\Common\\templatesandwizzards\\CacheableDBWizard\\WizardOfVTI.csproj",
+      "packagesPath": "C:\\Users\\pwrinkle\\.nuget\\packages\\",
+      "outputPath": "C:\\var\\vti\\qosi\\webapplicationqosi\\Common\\templatesandwizzards\\CacheableDBWizard\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\tanderson\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\pwrinkle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net472"
@@ -10000,8 +10000,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj": {
-              "projectPath": "C:\\Projects\\qositemplates\\CacheableDBTemplate\\CacheableDBTemplate.csproj"
+            "C:\\var\\vti\\qosi\\webapplicationqosi\\Common\\templatesandwizzards\\CacheableDBTemplate\\CacheableDB.csproj": {
+              "projectPath": "C:\\var\\vti\\qosi\\webapplicationqosi\\Common\\templatesandwizzards\\CacheableDBTemplate\\CacheableDB.csproj"
             }
           }
         }

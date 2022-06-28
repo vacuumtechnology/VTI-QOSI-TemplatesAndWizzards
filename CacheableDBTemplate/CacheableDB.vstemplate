@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>CacheableDBTemplate</Name>
-    <Description>CacheableDBTemplate</Description>
-    <Icon>CacheableDBTemplate.ico</Icon>
+    <Name>CacheableDB</Name>
+    <Description>CacheableDB</Description>
+    <Icon>CacheableDB.ico</Icon>
     <TemplateID>d1daf553-678f-467a-8836-47b5e909a796</TemplateID>
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
@@ -33,7 +33,7 @@
 				* Copy this path into powershell (in quotes if it has spaces) and execute `{path}\sn.exe -p key.snk outfile.key` to extract the public key
 				* Execute `{path}\sn.exe -t outfile.key` to get the extracted public key
 				* Copy this value and paste it after "PublicKeyToken=" -->
-	    <Assembly>CacheableDBWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=3a15a726b072f7b3</Assembly>
-	    <FullClassName>CacheableDBWizard.WizardImplementation</FullClassName>
+	    <Assembly>WizardOfVti, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=3a15a726b072f7b3</Assembly>
+	    <FullClassName>WizardOfVti.CacheableDB</FullClassName>
     </WizardExtension>
 </VSTemplate>

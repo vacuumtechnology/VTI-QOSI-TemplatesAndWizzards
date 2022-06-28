@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Task = System.Threading.Tasks.Task;
 
-namespace CacheableDBWizard
+namespace WizardOfVti
 {
     /// <summary>
     /// This is the class that implements the package exposed by this assembly.
@@ -24,8 +24,8 @@ namespace CacheableDBWizard
     /// </para>
     /// </remarks>
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(CacheableDBWizardPackage.PackageGuidString)]
-    public sealed class CacheableDBWizardPackage : AsyncPackage
+    [Guid(WizardPackage.PackageGuidString)]
+    public sealed class WizardPackage : AsyncPackage
     {
         /// <summary>
         /// CacheableDBWizardPackage GUID string.

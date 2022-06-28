@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+	<TemplateData>
+		<Name>CRUDCacheableDB</Name>
+		<Description>CRUDCacheableDB</Description>
+		<Icon>CRUDCacheableDB.ico</Icon>
+		<TemplateID>e9a1ebdc-d28e-4a87-80d8-e77f5b61fdc9</TemplateID>
+		<ProjectType>Web</ProjectType>
+		<ProjectSubType>CSharp</ProjectSubType>
+		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+		<ProvideDefaultName>true</ProvideDefaultName>
+		<DefaultName>ClassDB.cs</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<References>
+			<Reference>
+				<Assembly>System</Assembly>
+			</Reference>
+		</References>
+		<ProjectItem ReplaceParameters="true">ClassDB.cs</ProjectItem>
+	</TemplateContent>
+	<WizardExtension>
+		<!-- To acquire the PublicKeyToken (this links the template to the wizard):
+				* In the wizard project: Properties -> Signing
+				* Check "Sign the assembly"
+				* Choose a strong name key file: select <New...>
+				* Uncheck "Protect my key file with a password:"
+				* Select the wizard project in Solution Explorer and locate properties window (the other one)
+				* Set "Copy Build Output to Output Directory" True
+				* Rebuild the solution
+				* Copy the key.snk file from the wizard project root directory to \bin\Debug\
+				* Open a powershell in this directory
+				* Locate the sn.exe signing tool (e.g. C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools\sn.exe) 
+				* Copy this path into powershell (in quotes if it has spaces) and execute `{path}\sn.exe -p key.snk outfile.key` to extract the public key
+				* Execute `{path}\sn.exe -t outfile.key` to get the extracted public key
+				* Copy this value and paste it after "PublicKeyToken=" -->
+		<Assembly>WizardOfVti, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=3a15a726b072f7b3</Assembly>
+		<FullClassName>WizardOfVti.CRUDCacheableDB</FullClassName>
+	</WizardExtension>
+</VSTemplate>

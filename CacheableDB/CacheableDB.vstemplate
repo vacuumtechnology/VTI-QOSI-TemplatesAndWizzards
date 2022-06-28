@@ -8,7 +8,8 @@
     <ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
-    <DefaultName>Class.cs</DefaultName>
+    <DefaultName>ClassDB.cs</DefaultName>
+	  <ProvideDefaultName>true</ProvideDefaultName>
   </TemplateData>
   <TemplateContent>
     <References>
@@ -16,7 +17,7 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem ReplaceParameters="true">Class.cs</ProjectItem>
+    <ProjectItem ReplaceParameters="true">ClassDB.cs</ProjectItem>
   </TemplateContent>
     <WizardExtension>
 		<!-- To acquire the PublicKeyToken (this links the template to the wizard):

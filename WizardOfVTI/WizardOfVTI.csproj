@@ -51,6 +51,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CRUDCacheableDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WizardPackage.cs" />
     <Compile Include="CacheableDB.cs" />
@@ -75,6 +76,13 @@
     <ProjectReference Include="..\CacheableDB\CacheableDB.csproj">
       <Project>{E9C46AD3-D856-4627-AE0A-5EB7F744AFBC}</Project>
       <Name>CacheableDB</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\CRUDCacheableDB\CRUDCacheableDB.csproj">
+      <Project>{CCF63943-B482-4184-820E-0888E8C758B3}</Project>
+      <Name>CRUDCacheableDB</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

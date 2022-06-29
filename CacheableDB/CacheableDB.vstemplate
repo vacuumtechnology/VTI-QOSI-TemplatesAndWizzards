@@ -5,8 +5,7 @@
     <Description>CacheableDB</Description>
     <Icon>CacheableDB.ico</Icon>
     <TemplateID>d1daf553-678f-467a-8836-47b5e909a796</TemplateID>
-	<ProjectType>Web</ProjectType>
-	<ProjectSubType>CSharp</ProjectSubType>
+	<ProjectType>CSharp</ProjectType>
     <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <DefaultName>ClassDB.cs</DefaultName>

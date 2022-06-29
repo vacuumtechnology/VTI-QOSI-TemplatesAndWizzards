@@ -22,7 +22,7 @@ namespace $rootnamespace$
             DateTime start = DateTime.Now;
             $valuetype$Cache = QueryAll();
             $safeitemrootname$.RedisSet($valuetype$Cache);
-            Logger.LogMetric($"$safeitemrootname$.QueryAll FROM DB.Qosi", start);
+            Logger.LogMetric($"$safeitemrootname$.QueryAll FROM DB.$databaseName$", start);
         }
 
         public static Dictionary<$keytype$, $valuetype$> Cached()
@@ -57,7 +57,7 @@ namespace $rootnamespace$
             Dictionary <$keytype$, $valuetype$> results = new Dictionary<$keytype$, $valuetype$>();
             using (HostingEnvironment.Impersonate())
             {
-                using (SqlConnection conn = DB.Qosi)
+                using (SqlConnection conn = DB.$databaseName$)
                 {
                     try
                     {
@@ -72,8 +72,8 @@ namespace $rootnamespace$
                             SqlDataReader reader = fetch.ExecuteReader();
                             while (reader.Read())
                             {
-                                        $valuetype$ next = new $valuetype$(reader);
-                                results.Add(next.ID, next);
+                                $valuetype$ next = new $valuetype$(reader);
+                                results.Add(next.$keyName$, next);
                             }
                         }
                     }
@@ -153,7 +153,7 @@ namespace $rootnamespace$
             CheckPermission();
             $keytype$ newId = -1;
 
-            using (SqlConnection conn = DB.Qosi)
+            using (SqlConnection conn = DB.$databaseName$)
             {
                 try
                 {
@@ -161,11 +161,10 @@ namespace $rootnamespace$
                     {
                         Connection = conn,
                         CommandType = System.Data.CommandType.Text,
-                        CommandText = "INSERT INTO tbl_$valuetype$($valuetype$) " +
-                        "VALUES(@$valuetype$);SELECT SCOPE_IDENTITY();"
+                        CommandText = "$insertsqlstring$;SELECT SCOPE_IDENTITY();"
                     })
                     {
-                        command.Parameters.Add("@$valuetype$", System.Data.SqlDbType.DateTime).Value = input.Date;
+                        $commandbindings$
 
                         conn.Open();
                         SqlDataReader reader = command.ExecuteReader(); // creations, updates, deletes do not get read, run as "non query"
@@ -174,7 +173,7 @@ namespace $rootnamespace$
                             reader.Read();
                             var raw = reader.GetValue(0);
                             $keytype$.TryParse(raw.ToString(), out newId);
-                            input.ID = newId;
+                            input.$keyName$ = newId;
                             Logger.Create(input);
                             Bust();
                         }
@@ -198,7 +197,7 @@ namespace $rootnamespace$
             {
                 throw new RecordNotFoundException($"No $valuetype$ found with the supplied ID {id}.");
             }
-            using (SqlConnection conn = DB.Qosi)
+            using (SqlConnection conn = DB.$databaseName$)
             {
                 try
                 {
@@ -206,13 +205,11 @@ namespace $rootnamespace$
                     {
                         Connection = conn,
                         CommandType = System.Data.CommandType.Text,
-                        CommandText = "UPDATE tbl_$valuetype$" +
-                        " SET $valuetype$ = @$valuetype$ " +
-                        " WHERE ID = @ID;"
+                        CommandText = "$updatesqlstring$;"
                     })
                     {
-                        command.Parameters.Add("@ID", System.Data.SqlDbType.$keytype$).Value = id;
-                        command.Parameters.Add("@$valuetype$", System.Data.SqlDbType.DateTime).Value = input.Date;
+                        command.Parameters.Add("@$keyName$", System.Data.SqlDbType.$keydbtype$).Value = id;
+                        $commandbindings$
 
                         conn.Open();
                         command.ExecuteNonQuery();
@@ -237,7 +234,7 @@ namespace $rootnamespace$
                 throw new RecordNotFoundException($"No $valuetype$ found with the supplied ID {id}.");
             }
 
-            using (SqlConnection conn = DB.Qosi)
+            using (SqlConnection conn = DB.$databaseName$)
             {
                 try
                 {
@@ -245,11 +242,10 @@ namespace $rootnamespace$
                     {
                         Connection = conn,
                         CommandType = System.Data.CommandType.Text,
-                        CommandText = "DELETE FROM tbl_$valuetype$" +
-                        " WHERE ID = @ID;"
+                        CommandText = "$deletesqlstring$;"
                     })
                     {
-                        command.Parameters.Add("@ID", System.Data.SqlDbType.$keytype$).Value = id;
+                        command.Parameters.Add("@$keyName$", System.Data.SqlDbType.$keydbtype$).Value = id;
 
                         conn.Open();
                         command.ExecuteNonQuery();

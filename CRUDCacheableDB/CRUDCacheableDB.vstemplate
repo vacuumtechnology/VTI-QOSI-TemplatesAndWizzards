@@ -5,8 +5,7 @@
 		<Description>CRUDCacheableDB</Description>
 		<Icon>CRUDCacheableDB.ico</Icon>
 		<TemplateID>e9a1ebdc-d28e-4a87-80d8-e77f5b61fdc9</TemplateID>
-		<ProjectType>Web</ProjectType>
-		<ProjectSubType>CSharp</ProjectSubType>
+		<ProjectType>CSharp</ProjectType>
 		<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
 		<NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
 		<ProvideDefaultName>true</ProvideDefaultName>

@@ -65,7 +65,7 @@ namespace $rootnamespace$
                         {
                             Connection = conn,
                             CommandType = CommandType.Text,
-                            CommandText = "$sqlstring$"
+                            CommandText = "$selectsqlString$"
                         })
                         {
                             conn.Open();
@@ -175,7 +175,7 @@ namespace $rootnamespace$
                             $keytype$.TryParse(raw.ToString(), out newId);
                             input.$keyName$ = newId;
                             Logger.Create(input);
-                            Bust();
+                            Refresh();
                         }
                     }
                 }
@@ -214,7 +214,7 @@ namespace $rootnamespace$
                         conn.Open();
                         command.ExecuteNonQuery();
                         Logger.Change(before, input);
-                        Bust();
+                        Refresh();
                     }
                 }
                 catch (Exception ex)
@@ -250,7 +250,7 @@ namespace $rootnamespace$
                         conn.Open();
                         command.ExecuteNonQuery();
                         Logger.Delete(before);
-                        Bust();
+                        Refresh();
                     }
                 }
                 catch (Exception ex)

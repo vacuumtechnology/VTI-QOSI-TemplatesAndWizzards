@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("WizardOfVti")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Vacuum Technology Inc")]
 [assembly: AssemblyProduct("WizardOfVti")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyCopyright("Copyright © VTI 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WizardOfVti.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.1" Language="en-US" Publisher="Vacuum Technology" />
+        <Identity Id="WizardOfVti.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.2" Language="en-US" Publisher="Vacuum Technology" />
         <DisplayName>WizardOfVti</DisplayName>
         <Description xml:space="preserve">Wizards for QOSI VSIX Project.</Description>
     </Metadata>
@@ -18,8 +18,8 @@
     </Prerequisites>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="CacheableDB" d:TargetPath="|CacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
         <Asset Type="Microsoft.VisualStudio.Assembly" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" AssemblyName="|%CurrentProject%;AssemblyName|" />
-        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="CRUDCacheableDB" d:TargetPath="|CRUDCacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiCacheableDB" d:TargetPath="|VtiCacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiCRUDCacheableDB" d:TargetPath="|VtiCRUDCacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
     </Assets>
 </PackageManifest>

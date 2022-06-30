@@ -51,10 +51,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CRUDCacheableDB.cs" />
+    <Compile Include="VtiCRUDCacheableDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WizardPackage.cs" />
-    <Compile Include="CacheableDB.cs" />
+    <Compile Include="VtiCacheableDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="key.snk" />
@@ -73,16 +73,16 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5234" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CacheableDB\CacheableDB.csproj">
+    <ProjectReference Include="..\CacheableDB\VtiCacheableDB.csproj">
       <Project>{E9C46AD3-D856-4627-AE0A-5EB7F744AFBC}</Project>
-      <Name>CacheableDB</Name>
+      <Name>VtiCacheableDB</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\CRUDCacheableDB\CRUDCacheableDB.csproj">
+    <ProjectReference Include="..\CRUDCacheableDB\VtiCRUDCacheableDB.csproj">
       <Project>{CCF63943-B482-4184-820E-0888E8C758B3}</Project>
-      <Name>CRUDCacheableDB</Name>
+      <Name>VtiCRUDCacheableDB</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

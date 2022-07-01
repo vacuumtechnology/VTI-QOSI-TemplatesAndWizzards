@@ -173,7 +173,7 @@ namespace WizardOfVti
 
         public CRUDCacheableUserInputForm()
         {
-            this.Size = new System.Drawing.Size(576, 450);
+            this.Size = new System.Drawing.Size(576, 500);
 
             tableNameBox = new TextBox();
             tableNameBox.Location = new System.Drawing.Point(200, 25);
@@ -192,7 +192,7 @@ namespace WizardOfVti
             databaseNameBox.Size = new System.Drawing.Size(350, 20);
             this.Controls.Add(databaseNameBox);
 
-            foreach (string s in new string[] { "Qosi", "AutoCalRecords", "AutoCalStandards", "SRGData", "CalCert" })
+            foreach (string s in StaticSettings.DatabaseNames)
             {
                 databaseNameBox.Items.Add(s);
             }

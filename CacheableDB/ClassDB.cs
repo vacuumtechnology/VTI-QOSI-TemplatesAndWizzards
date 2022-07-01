@@ -23,7 +23,7 @@ namespace $rootnamespace$
             DateTime start = DateTime.Now;
             $valuetype$Cache = QueryAll();
             $safeitemrootname$.RedisSet($valuetype$Cache);
-            Logger.LogMetric($"$safeitemrootname$.QueryAll FROM DB.Qosi", start);
+            Logger.LogMetric($"$safeitemrootname$.QueryAll FROM DB.$databaseName$", start);
         }
 
         public static Dictionary<$keytype$, $valuetype$> Cached()
@@ -58,7 +58,7 @@ namespace $rootnamespace$
             Dictionary<$keytype$, $valuetype$> results = new Dictionary<$keytype$, $valuetype$>();
             using (HostingEnvironment.Impersonate())
             {
-                using (SqlConnection conn = DB.Qosi)
+                using (SqlConnection conn = DB.$databaseName$)
                 {
                     try
                     {

@@ -42,7 +42,7 @@ namespace WizardOfVti
 
             public VtiSimpleApiUserInputForm()
             {
-                this.Size = new System.Drawing.Size(576, 225);
+                this.Size = new System.Drawing.Size(576, 250);
 
                 modelNamespaceLabel = new Label();
                 modelNamespaceLabel.Location = new System.Drawing.Point(10, 25);

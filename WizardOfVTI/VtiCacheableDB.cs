@@ -65,6 +65,8 @@ namespace WizardOfVti
                     valueTypeString);
                 replacementsDictionary.Add("$sqlstring$",
                     sqlString);
+                replacementsDictionary.Add("$databaseName$",
+                    UserInputForm.DatabaseName);
             }
             catch (Exception ex)
             {
@@ -88,16 +90,20 @@ namespace WizardOfVti
         private static string keyType;
         private static string valueType;
         private static string sqlString;
+        private static string databaseName;
 
         private static Label modelNamespaceLabel;
         private static Label keyTypeLabel;
         private static Label valueTypeLabel;
         private static Label sqlStringLabel;
+        private static Label databaseNameLabel;
 
         private TextBox modelNamespaceBox;
         private TextBox keyTypeBox;
         private TextBox valueTypeBox;
         private TextBox sqlStringBox;
+
+        private ListBox databaseNameBox;
 
         private Button submitButton;
         
@@ -109,7 +115,7 @@ namespace WizardOfVti
 
         public UserInputForm()
         {
-            this.Size = new System.Drawing.Size(576, 200);
+            this.Size = new System.Drawing.Size(576, 225);
 
             modelNamespaceBox = new TextBox();
             modelNamespaceBox.Location = new System.Drawing.Point(200, 25);
@@ -123,51 +129,70 @@ namespace WizardOfVti
             modelNamespaceLabel.ForeColor = System.Drawing.Color.Black;
             this.Controls.Add(modelNamespaceLabel);
 
+            databaseNameBox = new ListBox();
+            databaseNameBox.Location = new System.Drawing.Point(200, 50);
+            databaseNameBox.Size = new System.Drawing.Size(350, 20);
+            this.Controls.Add(databaseNameBox);
+
+            foreach (string s in StaticSettings.DatabaseNames)
+            {
+                databaseNameBox.Items.Add(s);
+            }
+
+            databaseNameBox.SelectedIndex = 0;
+
+            databaseNameLabel = new Label();
+            databaseNameLabel.Location = new System.Drawing.Point(10, 50);
+            databaseNameLabel.Text = "Database: ";
+            databaseNameLabel.AutoSize = true;
+            databaseNameLabel.ForeColor = System.Drawing.Color.Black;
+            this.Controls.Add(databaseNameLabel);
+
             keyTypeBox = new TextBox();
-            keyTypeBox.Location = new System.Drawing.Point(200, 50);
+            keyTypeBox.Location = new System.Drawing.Point(200, 75);
             keyTypeBox.Size = new System.Drawing.Size(350, 20);
             this.Controls.Add(keyTypeBox);
 
             keyTypeLabel = new Label();
-            keyTypeLabel.Location = new System.Drawing.Point(10, 50);
+            keyTypeLabel.Location = new System.Drawing.Point(10, 75);
             keyTypeLabel.Text = "Database key data type: ";
             keyTypeLabel.AutoSize = true;
             keyTypeLabel.ForeColor = System.Drawing.Color.Black;
             this.Controls.Add(keyTypeLabel);
 
             valueTypeBox = new TextBox();
-            valueTypeBox.Location = new System.Drawing.Point(200, 75);
+            valueTypeBox.Location = new System.Drawing.Point(200, 100);
             valueTypeBox.Size = new System.Drawing.Size(350, 20);
             this.Controls.Add(valueTypeBox);
 
             valueTypeLabel = new Label();
-            valueTypeLabel.Location = new System.Drawing.Point(10, 75);
+            valueTypeLabel.Location = new System.Drawing.Point(10, 100);
             valueTypeLabel.Text = "Database value data type: ";
             valueTypeLabel.AutoSize = true;
             valueTypeLabel.ForeColor = System.Drawing.Color.Black;
             this.Controls.Add(valueTypeLabel);
 
             sqlStringBox = new TextBox();
-            sqlStringBox.Location = new System.Drawing.Point(200, 100);
+            sqlStringBox.Location = new System.Drawing.Point(200, 125);
             sqlStringBox.Size = new System.Drawing.Size(350, 20);
             this.Controls.Add(sqlStringBox);
 
             sqlStringLabel = new Label();
-            sqlStringLabel.Location = new System.Drawing.Point(10, 100);
+            sqlStringLabel.Location = new System.Drawing.Point(10, 125);
             sqlStringLabel.Text = "SQL DB Query string: ";
             sqlStringLabel.AutoSize = true;
             sqlStringLabel.ForeColor = System.Drawing.Color.Black;
             this.Controls.Add(sqlStringLabel);
 
             submitButton = new Button();
-            submitButton.Location = new System.Drawing.Point(10, 125);
+            submitButton.Location = new System.Drawing.Point(10, 150);
             submitButton.AutoSize = true;
             submitButton.Click += submitButton_Click;
             submitButton.Text = "Submit";
             this.Controls.Add(submitButton);
 
             selectFileButton = new Button();
-            selectFileButton.Location = new System.Drawing.Point(100, 125);
+            selectFileButton.Location = new System.Drawing.Point(100, 150);
             selectFileButton.AutoSize = true;
             selectFileButton.Click += selectFileButton_Click;
             selectFileButton.Text = "Attempt to populate from Model file";
@@ -217,12 +242,24 @@ namespace WizardOfVti
                 sqlString = value;
             }
         }
+        public static string DatabaseName
+        {
+            get
+            {
+                return databaseName;
+            }
+            set
+            {
+                databaseName = value;
+            }
+        }
         private void submitButton_Click(object sender, EventArgs e)
         {
             modelNamespace = modelNamespaceBox.Text;
             keyType = keyTypeBox.Text;
             valueType = valueTypeBox.Text;
             sqlString = sqlStringBox.Text;
+            databaseName = databaseNameBox.Text;
             this.Close();
         }
         private void selectFileButton_Click(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using System.Web.Hosting;
 using WebApplicationQOSI.API.Interfaces;
 using $modelnamespace$;
 using WebApplicationQOSI.Libraries;
+using WebApplicationQOSI.Libraries.Exceptions;
 
 namespace $rootnamespace$
 {

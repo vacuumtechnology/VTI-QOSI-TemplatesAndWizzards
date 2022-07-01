@@ -224,8 +224,8 @@ namespace WizardOfVti
                         keyTypeBox.Text = idColumn.Type;
                     }
 
-                    if (modelNamespace.Replace("WebApplicationQOSI.API.Models", "").Length > 0)
-                        routePrefixBox.Text = $"api/{modelNamespace.Replace("WebApplicationQOSI.API.Models.", "").Replace(".", "/")}/{valueTypeBox.Text}";
+                    if (modelNamespaceBox.Text.Replace("WebApplicationQOSI.API.Models", "").Length > 0)
+                        routePrefixBox.Text = $"api/{modelNamespaceBox.Text.Replace("WebApplicationQOSI.API.Models.", "").Replace(".", "/")}/{valueTypeBox.Text}";
                     else
                         routePrefixBox.Text = $"api/{valueTypeBox.Text}";
                     dataNamespaceBox.Text = modelNamespaceBox.Text.Replace(".Models", ".Data");

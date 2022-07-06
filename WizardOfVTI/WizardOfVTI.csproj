@@ -76,13 +76,6 @@
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="17.0.5234" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\VtiNonCacheableDB\VtiNonCacheableDB.csproj">
-      <Project>{FDEC7404-F37D-46C6-B65E-98F983ABE7EB}</Project>
-      <Name>VtiNonCacheableDB</Name>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
     <ProjectReference Include="..\CacheableDB\VtiCacheableDB.csproj">
       <Project>{E9C46AD3-D856-4627-AE0A-5EB7F744AFBC}</Project>
       <Name>VtiCacheableDB</Name>
@@ -93,6 +86,13 @@
     <ProjectReference Include="..\CRUDCacheableDB\VtiCRUDCacheableDB.csproj">
       <Project>{CCF63943-B482-4184-820E-0888E8C758B3}</Project>
       <Name>VtiCRUDCacheableDB</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\VtiNonCacheableDB\VtiNonCacheableDB.csproj">
+      <Project>{FDEC7404-F37D-46C6-B65E-98F983ABE7EB}</Project>
+      <Name>VtiNonCacheableDB</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

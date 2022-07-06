@@ -589,14 +589,38 @@ namespace WizardOfVti
                     string orderVar = idColumn.Name;
                     orderByVarBox.Text = orderVar;
 
-                    string selectionQuery = $"SELECT x.{idColumn.DbName}{(properties.Count > 0 ? (", x." + string.Join(", x.", properties.Select(p => p.DbName))) : "")} FROM {databaseTableName} x {{where}} ORDER BY {{orderBy}} OFFSET {{start}} ROWS FETCH NEXT {{length}} ROWS ONLY;";
+                    string deletedStr = "";
+                    foreach (var property in properties)
+                    {
+                        if (property.DbName == "Deleted")
+                        {
+                            deletedStr = " WHERE Deleted = 0";
+                            break;
+                        }
+                        else if (property.DbName == "IsDeleted")
+                        {
+                            deletedStr = " WHERE IsDeleted = 0";
+                            break;
+                        }
+                        else if (property.DbName == "Active")
+                        {
+                            deletedStr = " WHERE Active = 1";
+                            break;
+                        }
+                        else if (property.DbName == "IsActive")
+                        {
+                            deletedStr = " WHERE IsActive = 1";
+                            break;
+                        }
+                    }
+
+                    string selectionQuery = $"SELECT x.{idColumn.DbName}{(properties.Count > 0 ? (", x." + string.Join(", x.", properties.Select(p => p.DbName))) : "")} FROM {databaseTableName} x {{where}}{deletedStr} ORDER BY {{orderBy}} OFFSET {{start}} ROWS FETCH NEXT {{length}} ROWS ONLY;";
                     selectSqlStringBox.Text = selectionQuery;
 
-                    string filteredQuery = $"SELECT COUNT(*) FROM (SELECT x.{idColumn.DbName}{(properties.Count > 0 ? (", x." + string.Join(", x.", properties.Select(p =>p.DbName))) : "")} FROM {databaseTableName} x {{where}}) d";
+                    string filteredQuery = $"SELECT COUNT(*) FROM (SELECT x.{idColumn.DbName}{(properties.Count > 0 ? (", x." + string.Join(", x.", properties.Select(p =>p.DbName))) : "")} FROM {databaseTableName} x {{where}}{deletedStr}) d";
                     filteredSqlStringBox.Text = filteredQuery;
 
-                    // not all tables have Deleted flag
-                    string totalQuery = $"SELECT COUNT(*) FROM {idColumn.DbName} WHERE Deleted = 0";
+                    string totalQuery = $"SELECT COUNT(*) FROM {idColumn.DbName}{deletedStr}";
                     totalSqlStringBox.Text = totalQuery;
 
                     List<string> bindingLines = new List<string>();

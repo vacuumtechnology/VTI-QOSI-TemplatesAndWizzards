@@ -577,6 +577,7 @@ namespace WizardOfVti
                             if (!string.IsNullOrWhiteSpace(previousAutoPopulate))
                             {
                                 dbNameString = previousAutoPopulate.Replace("\"", "");
+                                previousAutoPopulate = "";
                             }
                             ModelPropertyInfo next = new ModelPropertyInfo(typeString, nameString, dbNameString, defaultString, nullable == "?");
                             properties.Add(next);

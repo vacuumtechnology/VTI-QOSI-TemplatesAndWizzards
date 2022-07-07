@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>VtiComplexApiController</Name>
+    <Description>VtiComplexApiController</Description>
+    <Icon>VtiComplexApiController.ico</Icon>
+    <TemplateID>7bcf599c-4944-4c4a-8e9d-7cee023e88c1</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>ComplexApiControllerClass.cs</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <References>
+      <Reference>
+        <Assembly>System</Assembly>
+      </Reference>
+    </References>
+    <ProjectItem ReplaceParameters="true">Class.cs</ProjectItem>
+  </TemplateContent>
+	<WizardExtension>
+		<Assembly>WizardOfVti, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=3a15a726b072f7b3</Assembly>
+		<FullClassName>WizardOfVti.VtiComplexAPIController</FullClassName>
+	</WizardExtension>
+</VSTemplate>

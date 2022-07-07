@@ -134,7 +134,7 @@ namespace $rootnamespace$
 		{
 			try
 			{
-						$valuetype$ res = $valuetype$DB.Get(id);
+				$valuetype$ res = $valuetype$DB.Get(id);
 				if (res == null)
 					return this.Request.CreateErrorResponse(HttpStatusCode.NotFound, "No pay date with the supplied ID found.");
 
@@ -154,7 +154,7 @@ namespace $rootnamespace$
 		{
 			try
 			{
-						$keytype$ newId = $valuetype$DB.Create(input);
+				$keytype$ newId = $valuetype$DB.Create(input);
 				input.$keyname$ = newId;
 			}
 			catch (PermissionDeniedException ex)
@@ -217,7 +217,7 @@ namespace $rootnamespace$
 		{
 			try
 			{
-						$valuetype$DB.Delete(id);
+				$valuetype$DB.Delete(id);
 			}
 			catch (RecordNotFoundException ex)
 			{

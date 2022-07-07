@@ -184,7 +184,7 @@ namespace $rootnamespace$
 		{
 			try
 			{
-						$valuetype$DB.Update(id, input);
+				$valuetype$DB.Update(id, input);
 			}
 			catch (RecordNotFoundException ex)
 			{

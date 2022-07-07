@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="WizardOfVti.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.4" Language="en-US" Publisher="Vacuum Technology" />
+        <Identity Id="WizardOfVti.72ac54e2-2e04-48d9-b69c-8437b6209382" Version="1.5" Language="en-US" Publisher="Vacuum Technology" />
         <DisplayName>WizardOfVti</DisplayName>
         <Description xml:space="preserve">Wizards for QOSI VSIX Project.</Description>
     </Metadata>
@@ -23,5 +23,6 @@
         <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiCRUDCacheableDB" d:TargetPath="|VtiCRUDCacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
         <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiSimpleApiController" d:TargetPath="|VtiSimpleApiController;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
         <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiNonCacheableDB" d:TargetPath="|VtiNonCacheableDB;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
+        <Asset Type="Microsoft.VisualStudio.ItemTemplate" d:Source="Project" d:ProjectName="VtiComplexApiController" d:TargetPath="|VtiComplexApiController;TemplateProjectOutputGroup|" Path="ItemTemplates" d:VsixSubPath="ItemTemplates" />
     </Assets>
 </PackageManifest>

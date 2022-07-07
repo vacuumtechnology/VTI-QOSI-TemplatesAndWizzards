@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="StaticSettings.cs" />
+    <Compile Include="VtiComplexAPIController.cs" />
     <Compile Include="VtiCRUDCacheableDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VtiNonCacheableDB.cs" />
@@ -86,6 +87,13 @@
     <ProjectReference Include="..\CRUDCacheableDB\VtiCRUDCacheableDB.csproj">
       <Project>{CCF63943-B482-4184-820E-0888E8C758B3}</Project>
       <Name>VtiCRUDCacheableDB</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\VtiComplexApiController\VtiComplexApiController.csproj">
+      <Project>{769855DE-BC70-41B9-9C23-2E6310E5CAE4}</Project>
+      <Name>VtiComplexApiController</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>

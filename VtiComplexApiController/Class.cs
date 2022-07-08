@@ -56,8 +56,6 @@ namespace $rootnamespace$
 					}
 				}
 
-				// versionFilter?
-
 				int? length = GetQueryStringInt("length");
 				int? startRow = GetQueryStringInt("start");
 

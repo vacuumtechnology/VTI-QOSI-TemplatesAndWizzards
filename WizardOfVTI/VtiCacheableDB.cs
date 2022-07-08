@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TemplateWizard;
 using System.Windows.Forms;
 using EnvDTE;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace WizardOfVti
 {
@@ -262,12 +264,52 @@ namespace WizardOfVti
             databaseName = databaseNameBox.Text;
             this.Close();
         }
+        class ModelPropertyInfo
+        {
+            public string Type { get; set; }
+            public string Name { get; set; }
+            public string DbType { get; set; }
+            public string DbName { get; set; }
+            public string DefaultValue { get; set; }
+            public bool Nullable { get; set; }
+            public ModelPropertyInfo(string type, string name, string dbName, string defaultValue, bool nullable)
+            {
+                Type = type;
+                Name = name;
+                DbName = dbName;
+                DefaultValue = defaultValue;
+                Nullable = nullable;
+                switch (type)
+                {
+                    case "int":
+                        DbType = "Int";
+                        break;
+                    case "long":
+                        DbType = "BigInt";
+                        break;
+                    case "string":
+                        DbType = "NVarChar";
+                        break;
+                    case "bool":
+                        DbType = "Bit";
+                        break;
+                    case "double":
+                        DbType = "Float";
+                        break;
+                    case "DateTime":
+                        DbType = "DateTime";
+                        break;
+                }
+            }
+        }
+
         private void selectFileButton_Click(object sender, EventArgs e)
         {
             fileDialog = new OpenFileDialog();
 
             // Attempt to auto-navigate to the Models directory
-            fileDialog.InitialDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\Models"; 
+            fileDialog.InitialDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).FullName + "\\Models";
+            List<ModelPropertyInfo> properties = new List<ModelPropertyInfo>();
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
                 var fileStream = fileDialog.OpenFile();
@@ -278,14 +320,86 @@ namespace WizardOfVti
                 // the chance to edit them afterwards if necessary.
                 StreamReader reader = new StreamReader(fileStream);
                 string line;
+
+                string previousAutoPopulate = "";
+
                 while ((line = reader.ReadLine()) != null)
                 {
                     if (line.Contains("namespace"))
                         modelNamespaceBox.Text = line.Substring("namespace ".Length, line.Length - "namespace ".Length);
                     else if (line.Contains("public class "))
                         valueTypeBox.Text = line.Split(new string[] { "class ", " : " }, StringSplitOptions.None)[1];
-                    else if (line.Contains(" ID { get; set; }") || line.Contains($" {valueTypeBox.Text}ID {{ get; set }}"))
-                        keyTypeBox.Text = line.Split(new string[] { "public ", " ID", $" {valueTypeBox.Text}ID" }, StringSplitOptions.None)[1];
+                    else if (previousAutoPopulate == "false")
+                    {
+                        previousAutoPopulate = "";
+                        continue;
+                    }
+                    else
+                    {
+                        Regex r = new Regex(@"public (?<type>[^c]\w+)(?<nullable>\?)?\s+(?<name>\w+)[^=\n]*(?:= (?<default>[""\w]+);)?");
+                        Match m = r.Match(line);
+                        if (m.Success)
+                        {
+                            string typeString = m.Groups["type"].Value ?? "";
+                            string nameString = m.Groups["name"].Value ?? "";
+                            string defaultString = m.Groups["default"].Value ?? "";
+                            string nullable = m.Groups["nullable"].Value ?? "";
+                            string dbNameString = nameString;
+                            if (!string.IsNullOrWhiteSpace(previousAutoPopulate))
+                            {
+                                dbNameString = previousAutoPopulate.Replace("\"", "");
+                            }
+                            ModelPropertyInfo next = new ModelPropertyInfo(typeString, nameString, dbNameString, defaultString, nullable == "?");
+                            properties.Add(next);
+                        }
+                        else
+                        {
+                            Regex r2 = new Regex(@"\[AutoPopulate\((?<populate>(?:false)|(?:[""\w]+))\)\]");
+                            Match m2 = r2.Match(line);
+                            if (m2.Success)
+                            {
+                                previousAutoPopulate = m2.Groups["populate"].Value;
+                            }
+                        }
+                    }
+                }
+
+                if (properties.Count > 0)
+                {
+                    ModelPropertyInfo idColumn = properties[0];
+                    properties.RemoveAt(0);
+
+                    keyTypeBox.Text = idColumn.Type;
+
+                    string databaseTableName = $"tbl_{valueTypeBox.Text}";
+
+                    string deletedStr = "";
+                    foreach (var property in properties)
+                    {
+                        if (property.DbName == "Deleted")
+                        {
+                            deletedStr = " WHERE Deleted = 0";
+                            break;
+                        }
+                        else if (property.DbName == "IsDeleted")
+                        {
+                            deletedStr = " WHERE IsDeleted = 0";
+                            break;
+                        }
+                        else if (property.DbName == "Active")
+                        {
+                            deletedStr = " WHERE Active = 1";
+                            break;
+                        }
+                        else if (property.DbName == "IsActive")
+                        {
+                            deletedStr = " WHERE IsActive = 1";
+                            break;
+                        }
+                    }
+
+                    string selectionQuery = $"SELECT {idColumn.DbName}{(properties.Count > 0 ? (", " + string.Join(", ", properties.Select(p => p.DbName))) : "")} FROM {databaseTableName}{deletedStr};";
+                    sqlStringBox.Text = selectionQuery;
                 }
             }
         }

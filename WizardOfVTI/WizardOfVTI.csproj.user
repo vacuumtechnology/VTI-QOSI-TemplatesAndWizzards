@@ -1,6 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev2|AnyCPU'">
+    <StartProgram>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev2|x86'">
+    <StartProgram>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RC|AnyCPU'">
+    <StartProgram>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RC|x86'">
+    <StartProgram>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+    <StartAction>Program</StartAction>
   </PropertyGroup>
 </Project>
